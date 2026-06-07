@@ -15,10 +15,9 @@ public class SegundoProblema {
         String name = sc.nextLine();
         System.out.print("Price: ");
         double price = sc.nextDouble();
-        System.out.print("Quantity in Stock: ");
         int quantity = sc.nextInt();
 
-        Product product = new Product(name, price, quantity);
+        Product product = new Product(name, price);
 
         System.out.println();
         System.out.println("Product data:" + product);
