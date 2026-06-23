@@ -5,36 +5,40 @@ import java.io.FileReader;
 import java.io.IOException;
 
 public class FileReaderBufferedReader {
-    public static void main (String []args){
+
+    public static void main(String[] args) {
 
         String path = "c:\\temp\\in.txt";
         FileReader fr = null;
         BufferedReader br = null;
 
-        try{
+        try {
             fr = new FileReader(path);
             br = new BufferedReader(fr);
 
             String line = br.readLine();
-            while (line != null){
+
+            while (line != null) {
                 System.out.println(line);
                 line = br.readLine();
             }
-        }
-        catch (IOException e){
+
+        } catch (IOException e) {
             System.out.println("Error: " + e.getMessage());
-        }
-        finally {
+
+        } finally {
             try {
-            if (br != null){
-                br.close();
+                if (br != null) {
+                    br.close();
+                }
+
+                if (fr != null) {
+                    fr.close();
+                }
+
+            } catch (IOException e) {
+                e.printStackTrace();
             }
-            if (fr != null){
-                fr.close();
-            }
-        }
-        catch (IOException e){
-            e.printStackTrace();
         }
     }
 }
