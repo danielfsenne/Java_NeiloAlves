@@ -2,6 +2,8 @@ package application;
 
 import model.entities.CarRental;
 import model.entities.Vehicle;
+import model.services.BrazilTaxService;
+import model.services.RentalService;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -25,6 +27,19 @@ public class Interface {
         LocalDateTime finish = LocalDateTime.parse(sc.nextLine(), fmt);
 
         CarRental cr = new CarRental();
+        System.out.print("Entre com o preço com hora: ");
+        double pricePerHour = sc.nextDouble();
+        System.out.print("Entre com o preço do dia: ");
+        double pricePerDay = sc.nextDouble();
+
+        RentalService rentalService = new RentalService(pricePerHour, pricePerDay, new BrazilTaxService());
+        rentalService.processInvoice(cr);
+
+        System.out.println("Fatura: ");
+        System.out.println("Pagamento Básico: " + cr.getInvoice().getBasicPayment());
+        System.out.println("Imposto: " + cr.getInvoice().getTax());
+        System.out.println("Pagamento Total: " + cr.getInvoice().getTotalPayment());
+
 
         sc.close();
     }
