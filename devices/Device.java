@@ -1,6 +1,6 @@
 package devices;
 
-public class Device {
+public abstract class Device {
     public String serialNumber;
 
     public Device(String serialNumber){
