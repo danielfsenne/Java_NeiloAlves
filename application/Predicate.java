@@ -1,6 +1,7 @@
 package application;
 
 import entities.Product;
+import util.PriceUpdate;
 import util.ProductPredicate;
 
 import java.util.ArrayList;
@@ -16,10 +17,17 @@ public class Predicate {
         list.add(new Product("Tablet", 350.00));
         list.add(new Product("HD Case", 80.00));
 
+        list.forEach(new PriceUpdate());
+
+        list.forEach(System.out::println);
+
+        /*
         list.removeIf(new ProductPredicate());
 
         for (Product p : list){
             System.out.println(p);
         }
+
+         */
     }
 }

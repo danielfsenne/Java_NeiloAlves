@@ -28,7 +28,7 @@ public class Product {
         return price;
     }
 
-    public void setPrice(){
+    public void setPrice(double v){
         this.price = price;
     }
 
