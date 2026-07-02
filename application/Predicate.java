@@ -38,4 +38,7 @@ public class Predicate {
 
          */
     }
+
+    public boolean test(Product p) {
+    }
 }
