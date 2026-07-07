@@ -2,9 +2,7 @@ package db;
 
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.Properties;
 
 public class DB {
@@ -14,7 +12,7 @@ public class DB {
     public static Connection getConnection(){
         if (conn == null){
             try{
-                Properties props = loadPropeties();
+                Properties props = loadProperties();
                 String url = props.getProperty("dburl");
                 conn = DriverManager.getConnection(url, props);
             }
@@ -36,14 +34,33 @@ public class DB {
         }
     }
 
-    private static Properties loadPropeties(){
-        try (FileInputStream fs = new FileInputStream("db.propieties")){
-            Properties props  = new Properties();
+    private static Properties loadProperties() {
+        try (FileInputStream fs = new FileInputStream("C:\\Users\\danie\\Desktop\\curso_java\\jdbc1\\db.properties")) {            Properties props = new Properties();
             props.load(fs);
             return props;
         }
-        catch (IOException e){
+        catch (IOException e) {
             throw new DbException(e.getMessage());
+        }
+    }
+
+    public static void closeStatment(Statement st){
+        if (st != null){
+            try {
+                st.close();
+            } catch (SQLException e) {
+                throw new DbException(e.getMessage());
+            }
+        }
+    }
+
+    public static void closeResultSet(ResultSet rs){
+        if (rs != null){
+            try {
+                rs.close();
+            } catch (SQLException e) {
+                throw new DbException(e.getMessage());
+            }
         }
     }
 }
