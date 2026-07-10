@@ -13,6 +13,11 @@ public class Program {
 
         Department obj = new Department(1, "Books");
 
+        SellerDao sellerDao = (SellerDao) DaoFactory.createSellerDao();
+
+        Seller seller = sellerDao.findById(3);
+
+        /*
         Seller seller = new Seller(3000.0,
                 obj,
                 new Date(),
@@ -21,7 +26,7 @@ public class Program {
                 "Bob");
 
         Object sellerDao = DaoFactory.createSellerDao();
-
+       */
         System.out.println(seller);
     }
 }
