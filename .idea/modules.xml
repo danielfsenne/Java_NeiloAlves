@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/curso_java.iml" filepath="$PROJECT_DIR$/.idea/curso_java.iml" />
       <module fileurl="file://$PROJECT_DIR$/demo-dao-jdbc/demo-dao-jdbc.iml" filepath="$PROJECT_DIR$/demo-dao-jdbc/demo-dao-jdbc.iml" />
       <module fileurl="file://$PROJECT_DIR$/jdbc1/jdbc1.iml" filepath="$PROJECT_DIR$/jdbc1/jdbc1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jpa/jpa.iml" filepath="$PROJECT_DIR$/jpa/jpa.iml" />
     </modules>
   </component>
 </project>
