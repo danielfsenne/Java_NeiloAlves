@@ -2,18 +2,25 @@ package aplication;
 
 import dominio.People;
 
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+
 public class Program {
 
     public static void main(String [] args){
 
-        People p1 = new People(1, "Carlos da Silva", "carlos@gmail.com");
-        People p2 = new People(2, "Maria Benedita", "maria@gamil.com");
-        People p3 = new People(3, "Roger Pimpao", "roger@gmail.com");
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("exemplo-jpa");
+        EntityManager em = emf.createEntityManager();
 
-        System.out.println(p1);
-        System.out.println(p2);
-        System.out.println(p3);
+        People p = em.find(People.class , 2);
+        em.getTransaction().begin();
+        em.remove(p);
+        em.getTransaction().commit();
 
+        System.out.println("Pronto");
+        em.close();
+        emf.close();
     }
 
 }
