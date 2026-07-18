@@ -1,5 +1,6 @@
 package com.webservice.course.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 import java.io.Serializable;
@@ -42,7 +43,8 @@ public class Category implements Serializable {
         this.name = name;
     }
 
-    @Transient
+    @JsonIgnore
+    @ManyToMany(mappedBy = "categories")
     public Set<Product> getProducts() {
         return products;
     }
