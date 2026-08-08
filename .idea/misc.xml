@@ -5,6 +5,8 @@
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/jpamaven/pom.xml" />
+        <option value="$PROJECT_DIR$/chess-system/pom.xml" />
+        <option value="$PROJECT_DIR$/javaFX/pom.xml" />
       </list>
     </option>
   </component>
