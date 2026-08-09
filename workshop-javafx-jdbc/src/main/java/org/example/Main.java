@@ -2,8 +2,8 @@ package org.example;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.ScrollPane;
 import javafx.stage.Stage;
 
 public class Main extends Application {
@@ -15,9 +15,12 @@ public class Main extends Application {
                 getClass().getResource("/gui/MainView.fxml")
         );
 
-        Parent root = loader.load();
+        ScrollPane scrollPane = loader.load();
 
-        Scene scene = new Scene(root);
+        scrollPane.setFitToHeight(true);
+        scrollPane.setFitToWidth(true);
+
+        Scene scene = new Scene(scrollPane);
 
         stage.setTitle("Workshop JavaFX JDBC");
         stage.setScene(scene);
