@@ -1,6 +1,0 @@
-gui\util\Constraints.class
-model\entities\Department.class
-org\example\Main.class
-controller\MainViewController.class
-controller\DepartmentListController.class
-gui\util\Alerts.class
